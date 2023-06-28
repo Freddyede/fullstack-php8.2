@@ -4,3 +4,5 @@
 back/vendor/
 
 back/composer.lock
+
+front/package-lock.json
