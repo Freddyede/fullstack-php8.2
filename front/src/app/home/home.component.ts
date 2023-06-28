@@ -7,5 +7,13 @@ import { HttpClientService } from "../services/httpClient.service";
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent {
-    constructor(private readonly httpServices: HttpClientService) { }
+
+    dataObject: any;
+    constructor(private readonly httpServices: HttpClientService) {
+    }
+    ngOnInit() {
+        this.httpServices.getResources('https://localhost:8000/').subscribe(data => {
+            this.dataObject = data;
+        });
+    }
 }
